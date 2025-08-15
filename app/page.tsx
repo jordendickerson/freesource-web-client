@@ -1,12 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import ThemeToggle from "@/components/toggles/toggle-theme";
 import { Button } from "@/components/ui/button";
 import { Book, BookOpen } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <section className="flex flex-1 flex-col items-center justify-center w-full">
       <h1 className="text-6xl md:text-8xl font-bold text-center mb-8">
         <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
           free
@@ -23,8 +22,7 @@ export default function Home() {
         >
           <BookOpen className="mr-2" /> Explore
         </Button>
-        <ThemeToggle />
       </div>
-    </div>
+    </section>
   );
 }

@@ -10,13 +10,17 @@ import {
 import { Button } from "../ui/button";
 import { Sun, Moon } from "lucide-react";
 
-export default function ThemeToggle() {
+interface ThemeToggleProps {
+  className?: string;
+}
+
+export default function ThemeToggle({ className }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div>
+    <div className={className}>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger asChild className="cursor-pointer">
           <Button variant="outline" size="icon">
             {theme === "dark" ? (
               <Moon className="h-[1.2rem] w-[1.2rem]" />
@@ -27,13 +31,22 @@ export default function ThemeToggle() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem onClick={() => setTheme("light")}>
+          <DropdownMenuItem
+            className="cursor-pointer"
+            onClick={() => setTheme("light")}
+          >
             Light
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setTheme("dark")}>
+          <DropdownMenuItem
+            className="cursor-pointer"
+            onClick={() => setTheme("dark")}
+          >
             Dark
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setTheme("system")}>
+          <DropdownMenuItem
+            className="cursor-pointer"
+            onClick={() => setTheme("system")}
+          >
             System
           </DropdownMenuItem>
         </DropdownMenuContent>
