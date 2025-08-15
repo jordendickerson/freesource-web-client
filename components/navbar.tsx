@@ -14,12 +14,16 @@ export default function NavBar() {
       <div className="w-full grid grid-cols-4 items-center gap-4">
         {/* Left side */}
         <div className="flex items-center gap-4 justify-start mx-2">
-          <Button variant="link" className="cursor-pointer">
-            Home
-          </Button>
-          <Button variant="link" className="cursor-pointer">
-            Categories
-          </Button>
+          <Link href="/">
+            <Button variant="link" className="cursor-pointer">
+              Home
+            </Button>
+          </Link>
+          <Link href="/categories">
+            <Button variant="link" className="cursor-pointer">
+              Categories
+            </Button>
+          </Link>
         </div>
 
         {/* Center */}
@@ -32,15 +36,19 @@ export default function NavBar() {
           <div className="hidden lg:block">
             <ThemeToggle />
           </div>
-          <Button
-            variant="secondary"
-            className="bg-slate-200 hover:bg-slate-300 text-slate-700 cursor-pointer"
-          >
-            Sign In
-          </Button>
-          <Button className="bg-blue-500 hover:bg-blue-600 text-slate-100 cursor-pointer">
-            Sign Up
-          </Button>
+          <Link href="/signin">
+            <Button
+              variant="secondary"
+              className="bg-slate-200 hover:bg-slate-300 text-slate-700 cursor-pointer"
+            >
+              Sign In
+            </Button>
+          </Link>
+          <Link href="/signup">
+            <Button className="bg-blue-500 hover:bg-blue-600 text-slate-100 cursor-pointer">
+              Sign Up
+            </Button>
+          </Link>
         </div>
       </div>
     </NavigationMenu>
